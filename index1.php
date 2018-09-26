@@ -15,7 +15,7 @@
 					'Тень горы'=>'Грегори Дэвид Робертс',
 					'Атлант расправил плечи'=>'Айн Рэнд'
 				);
-	echo "<h3>выводим ассоциативный массив методом foreach</h3>";
+	echo "<h3>Выводим ассоциативный массив методом foreach</h3>";
 	foreach($favorBooks as $bookAutor => $bookTitle){
 		echo "$bookAutor => $bookTitle <br><br>";
 	}
