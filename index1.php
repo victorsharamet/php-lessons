@@ -16,7 +16,7 @@
 					'Атлант расправил плечи'=>'Айн Рэнд'
 				);
 	echo "<h3>Выводим ассоциативный массив методом foreach</h3>";
-	foreach($favorBooks as $bookAutor => $bookTitle){
-		echo "$bookAutor => $bookTitle <br><br>";
+	foreach($favorBooks as $bookTitle => $bookAutor){
+		echo "$bookTitle => $bookAutor <br><br>";
 	}
  ?>
