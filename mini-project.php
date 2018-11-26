@@ -11,15 +11,15 @@ if ( mysqli_connect_error() ) {
 if ( array_key_exists('add-user', $_POST) ) {
 	if ( $_POST['name'] == '' ) {
 		echo "<p>Необходимо ввести имя!</p>";
-	} else if ( $_POST['password'] == '' ) {
-		echo "<p>Необходимо ввести пароль!</p>";
 	} else if ( $_POST['email'] == '' ) {
 		echo "<p>Необходимо ввести email!</p>";
+	} else if ( $_POST['password'] == '' ) {
+		echo "<p>Необходимо ввести пароль!</p>";
 	} else {
-		$query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES
-			('" . mysqli_real_escape_string($link, $_POST['name']) . "',
-			('" . mysqli_real_escape_string($link, $_POST['password']) . "',
-			('" . mysqli_real_escape_string($link, $_POST['email']) . "',
+		$query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES 
+			('".mysqli_real_escape_string($link, $_POST['name'])."',
+			'".mysqli_real_escape_string($link, $_POST['email'])."',
+			'".mysqli_real_escape_string($link, $_POST['password'])."'
 			)";
 
 			if ( mysqli_query($link, $query) ) {
@@ -77,6 +77,6 @@ if ( $result = mysqli_query($link, $query) ) {
 <form action="mini-project.php" method="POST">
 	<input type="text" placeholder="Введите имя" name="name">
 	<input type="text" placeholder="Введите email" name="email">
-	<input type="text" placeholder="Введите пароль" name="password">
+	<input type="password" placeholder="Введите пароль" name="password">
 	<input type="submit" value="Добавить пользователя" name="add-user">
 </form>
