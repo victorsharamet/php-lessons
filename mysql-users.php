@@ -15,7 +15,11 @@ if ( mysqli_connect_error() ) {
 // $query = "SELECT * FROM `users` WHERE `email` LIKE '%man%'";
 // $query = "SELECT * FROM `users` WHERE `id` > 2";
 // $query = "SELECT * FROM `users` WHERE `id` >= 2";
-$query = "SELECT * FROM `users` WHERE `id` >= 2 AND `email` LIKE '%gmail.com'";
+// $query = "SELECT * FROM `users` WHERE `id` >= 2 AND `email` LIKE '%gmail.com'";
+
+$name = "Bryan O'Konor";
+// $query = "SELECT * FROM `users` WHERE `name` = '" . $name . "'";
+$query = "SELECT * FROM `users` WHERE `name` = '" . mysqli_real_escape_string($link, $name) . "'";
 
 
 if ( $result = mysqli_query($link, $query) ) {
